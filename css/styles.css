@@ -104,11 +104,10 @@ color: goldenrod;
     padding: 1rem 0 3rem 0;
 }
 .site-header.inicio {
-    background-image: url(../img/ima0.jpg);
+    /*background-image: url(../img/ima0.jpg);*/
     background-position: center center;
     background-size: cover;
-    height: 100vh;
-    min-height: 60rem;
+    
 }
 .contenido-header {
     height: 100%;
