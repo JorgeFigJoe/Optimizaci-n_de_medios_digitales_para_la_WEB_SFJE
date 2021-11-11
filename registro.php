@@ -13,7 +13,7 @@ if ($conexion->connect_error) {
 
 // sql Crea la tabla usando Lenguaje PHP
 $sql = "CREATE TABLE IF NOT EXISTS comentarios (
-id INT(150) NOT NULL IDENTITY(1,1) PRIMARY KEY,
+id INT(150) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(150) NOT NULL,
 comment VARCHAR(150) NOT NULL
 )";
