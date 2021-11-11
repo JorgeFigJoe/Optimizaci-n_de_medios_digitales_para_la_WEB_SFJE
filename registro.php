@@ -18,6 +18,13 @@ name VARCHAR(150) NOT NULL,
 comment VARCHAR(150) NOT NULL
 )";
 
+// Se verifica si la tabla ha sido creado
+if ($conexion->query($sql) === TRUE) {
+    echo "la tabla alumnos ha sido creado";
+} else {
+    echo "Hubo un error al crear la tabla alumnos: " . $conn->error;
+}
+
 	$sql="INSERT into comentarios (name,comment)
 			values ('$name','$comment')";
 	echo mysqli_query($conexion,$sql);
