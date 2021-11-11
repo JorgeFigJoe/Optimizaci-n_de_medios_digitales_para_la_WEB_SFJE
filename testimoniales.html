@@ -49,6 +49,23 @@
         </div>
     </section>
 
+    <div id="div1">tabla:
+        <table id="usuarios" class="sortable">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Nombre</span></th>
+                    <th><span>Comentario</span></th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+    
+            </tbody>
+        </table>
+    </div>
+    <button type="button" class="boton boton-verde" id="btnGenerate">Generar tabla</button>
+    <br>
+
     <main class="contenedor seccion contenido-centrado">
     <h1>Agregar testimonial</h1>
 
@@ -96,5 +113,32 @@
                } 
            });  
        });
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $('#btnGenerate').click(function(){
+            $.ajax({
+               type: "POST",
+               url: "allComents.php",
+               dataType: "json",
+               success: function(data){
+
+                let tableBody = document.getElementById('tbody');
+                           
+                for (var key in data) {
+                    $("#usuarios").append('<tr>' + 
+                    '<td class="numero" align="center" style="dislay: none;">' + data[key].id + '</td>'+
+                    '<td align="center" style="dislay: none;">' + data[key].name + '</td>'+
+                    '<td align="center" style="dislay: none;">' + data[key].comment + '</td>'+ '</tr>');
+                }
+
+                var table = $('#usuarios').DataTable();
+                   
+               } 
+           }); 
+        });
+
     });
 </script>
