@@ -125,6 +125,10 @@
                dataType: "json",
                success: function(data){
 
+                table.clear();
+                        table.destroy();
+                        $('#usuarios tbody').off('click');
+
                 let tableBody = document.getElementById('tbody');
                            
                 for (var key in data) {

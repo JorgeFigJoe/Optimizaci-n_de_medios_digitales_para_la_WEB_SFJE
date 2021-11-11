@@ -20,9 +20,9 @@ comment VARCHAR(150) NOT NULL
 
 // Se verifica si la tabla ha sido creado
 if ($conexion->query($sql) === TRUE) {
-    echo "la tabla alumnos ha sido creado";
+    echo "la tabla comentarios ha sido creado";
 } else {
-    echo "Hubo un error al crear la tabla alumnos: " . $conn->error;
+    echo "Hubo un error al crear la tabla comentarios: " . $conn->error;
 }
 
 	$sql="INSERT into comentarios (name,comment)
