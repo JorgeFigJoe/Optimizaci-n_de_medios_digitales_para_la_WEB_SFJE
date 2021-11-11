@@ -1,3 +1,15 @@
+<?php
+//http://localhost/plb/Proyecto_Integradora_SFJE/index.php
+$host = "localhost";
+$port = "3307";
+$dbname = "todos";
+$user = "postgres";
+$password = "";
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +39,7 @@
                     <a href="nosotros.html">Nosotros</a>
                     <a href="anuncios.html">Catalogo</a>
                     <a href="contacto.html">Registro</a>
-                    <a href="testimoniales.html">testimoniales</a>
+                    <a href="testimoniales.php">testimoniales</a>
                 </nav>
             </div>
         </div>
@@ -47,7 +59,7 @@
     <main class="contenedor seccion contenido-centrado">
     <h1>Agregar testimonial</h1>
 
-    <form class="contacto" action="">
+    <form class="contacto" action="testimoniales.php" method="POST">
         <fieldset>
             <legend>Información Personal</legend>
             <label for="nombre">Nombre:</label>
@@ -67,7 +79,7 @@
                 <a href="nosotros.html">Nosotros</a>
                 <a href="anuncios.html">Catalogo</a>
                 <a href="contacto.html">Registro</a>
-                <a href="testimoniales.html">testimoniales</a>
+                <a href="testimoniales.php">testimoniales</a>
             </nav>
             <p class="copyright">Todos los Derechos Reservados 2021 UDG virtual SFJE  jorfigsf1@gmail.com&copy; </p>
             <p class="copyright">Conceptualización de servicios en la nube Codigo: 219917517</p>
