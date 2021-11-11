@@ -1,14 +1,3 @@
-<?php
-//http://localhost/plb/Proyecto_Integradora_SFJE/index.php
-$host = "localhost";
-$port = "3307";
-$dbname = "todos";
-$user = "postgres";
-$password = "";
-
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +7,10 @@ $password = "";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Integradora</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/sorttable.js"></script>
+        <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
+        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
 </head>
 <body>
@@ -39,7 +32,7 @@ $password = "";
                     <a href="nosotros.html">Nosotros</a>
                     <a href="anuncios.html">Catalogo</a>
                     <a href="contacto.html">Registro</a>
-                    <a href="testimoniales.php">testimoniales</a>
+                    <a href="testimoniales.html">testimoniales</a>
                 </nav>
             </div>
         </div>
@@ -59,16 +52,16 @@ $password = "";
     <main class="contenedor seccion contenido-centrado">
     <h1>Agregar testimonial</h1>
 
-    <form class="contacto" action="testimoniales.php" method="POST">
+    <form class="form1" action="testimoniales.html" method="POST" id="form1">
         <fieldset>
             <legend>Información Personal</legend>
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" placeholder="Tu Nombre">
+            <input type="text" id="name" placeholder="Tu Nombre" name="name">
 
             <label for="mensaje">Mensaje: </label>
-            <textarea  id="mensaje"></textarea>
+            <textarea  id="comment" name="comment"></textarea>
     </fieldset>
-    <input type="submit" value="Enviar" class="boton boton-verde">
+    <button type="button" class="boton boton-verde" id="btnRegister">Registrar</button>
     </form>
     <br><br>
     </main>
@@ -79,7 +72,7 @@ $password = "";
                 <a href="nosotros.html">Nosotros</a>
                 <a href="anuncios.html">Catalogo</a>
                 <a href="contacto.html">Registro</a>
-                <a href="testimoniales.php">testimoniales</a>
+                <a href="testimoniales.html">testimoniales</a>
             </nav>
             <p class="copyright">Todos los Derechos Reservados 2021 UDG virtual SFJE  jorfigsf1@gmail.com&copy; </p>
             <p class="copyright">Conceptualización de servicios en la nube Codigo: 219917517</p>
@@ -87,3 +80,21 @@ $password = "";
     </footer>
 </body>
 </html>
+
+<script>
+    $(document).ready(function(){
+       $('#btnRegister').click(function(){
+           var datos = $('#form1').serialize();
+           $.ajax({
+               type: "POST",
+               url: "registro.php",
+               data: datos,
+               success: function(data){
+                   if(data === '' ){
+                    alert('REGISTRO NO EXITOSO');
+                   }
+               } 
+           });  
+       });
+    });
+</script>
