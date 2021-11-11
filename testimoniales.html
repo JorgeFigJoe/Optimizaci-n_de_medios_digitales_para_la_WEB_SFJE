@@ -125,21 +125,20 @@
                dataType: "json",
                success: function(data){
 
-                table.clear();
-                        table.destroy();
-                        $('#usuarios tbody').off('click');
-
+                
                 let tableBody = document.getElementById('tbody');
+
+                var table = $('#usuarios').DataTable();
+
+                table.clear();
+                table.destroy();
                            
                 for (var key in data) {
                     $("#usuarios").append('<tr>' + 
                     '<td class="numero" align="center" style="dislay: none;">' + data[key].id + '</td>'+
                     '<td align="center" style="dislay: none;">' + data[key].name + '</td>'+
                     '<td align="center" style="dislay: none;">' + data[key].comment + '</td>'+ '</tr>');
-                }
-
-                var table = $('#usuarios').DataTable();
-                   
+                }              
                } 
            }); 
         });
